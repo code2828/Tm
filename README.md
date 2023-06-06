@@ -1,3 +1,3 @@
  # Tm - Thulium
-A game featureing author's hobby.
+A game featuring author's hobby.
 
