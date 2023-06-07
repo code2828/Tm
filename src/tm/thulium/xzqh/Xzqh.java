@@ -2,19 +2,23 @@ package tm.thulium.xzqh;
 
 import java.util.ArrayList;
 
+import tm.thulium.util.XzqhUtil;
+
 public class Xzqh {
 	protected String name;
 	protected String suffix = new String();
-	protected static ArrayList<Integer> children;
+	protected static ArrayList<Xzqh> children = new ArrayList<Xzqh>();
 	protected static Integer serialNumber;
 
 	public Xzqh() {
-		serialNumber = Xzqhs.acquireSerial();
+		serialNumber = XzqhUtil.maxSerial;
+		XzqhUtil.maxSerial++;
 		name = "NaN";
 	}
 
 	public Xzqh(String namee) {
-		serialNumber = Xzqhs.acquireSerial();
+		serialNumber = XzqhUtil.maxSerial;
+		XzqhUtil.maxSerial++;
 		name = namee;
 	}
 
@@ -31,16 +35,16 @@ public class Xzqh {
 		name = namee;
 	}
 
-	public static ArrayList<Integer> getChild() {
+	public ArrayList<Xzqh> getChild() {
 		return children;
 	}
 
-	public static void setChild(ArrayList<Integer> child) {
+	public static void setChild(ArrayList<Xzqh> child) {
 		Xzqh.children = child;
 	}
 
 	public Xzqh addChild(Xzqh child) {
-		children.add(child.getSerialNumber());
+		children.add(child);
 		return this;
 	}
 
