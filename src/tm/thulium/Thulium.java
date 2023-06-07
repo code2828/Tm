@@ -18,7 +18,11 @@ public class Thulium {
 		int ser = 0;
 		System.out.println("a for Zhou, b for Fu, c for Shi, d for Jun, e for Xhi, f for Qu");
 		System.out.println("g for Xian, h for Dao, i for Zhen, j for Xiang.");
+		int debu = 0;
 		while (true) {
+			debu++;
+			if (debu >= 100)
+				break;
 			inp = sc.next();
 			System.out.println("you input: \"" + inp + "\"");
 			if (inp.length() == 0) {
@@ -49,19 +53,15 @@ public class Thulium {
 					e.printStackTrace();
 					System.out.println("You have not properly entered the name!");
 				}
-				System.err.println("end of loop");
 			}
+			System.err.println("end of looopoapdospo");
 		}
 		System.out.println("MASTER: " + XzqhUtil.MASTER.getSerialNumber() + ' ' + XzqhUtil.MASTER.getName());
-		System.out.println("Added districts:");
+		System.out.println("L added districts:");
 		XzqhUtil.debugPrintLinear();
+		System.out.println("T added districts:");
+		XzqhUtil.printInTree();
 		System.out.println("MASTER: " + XzqhUtil.MASTER.getSerialNumber() + ' ' + XzqhUtil.MASTER.getName());
 	}
 
 }
-/*
-1a
-0 癸
-1a
-0 壬
- */

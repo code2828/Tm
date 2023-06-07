@@ -5,8 +5,8 @@ import java.util.ArrayList;
 public class Xzqh {
 	protected String name = "";
 	protected String suffix = new String();
-	protected static ArrayList<Xzqh> children = new ArrayList<Xzqh>();
-	protected static Integer serialNumber;
+	protected ArrayList<Xzqh> children = new ArrayList<Xzqh>();
+	protected Integer serialNumber;
 
 	public Xzqh() {
 		serialNumber = XzqhUtil.getMaxSerial();
@@ -40,12 +40,13 @@ public class Xzqh {
 		return children;
 	}
 
-	public static void setChild(ArrayList<Xzqh> child) {
-		Xzqh.children = child;
+	public void setChild(ArrayList<Xzqh> child) {
+		children = child;
 	}
 
 	public Xzqh addChild(Xzqh child) {
-		System.err.println("adding child. ch=(" + child.getSerialNumber() + ", " + child.getName() + ")");
+		System.err.print("adding child. ch=(" + child.getSerialNumber() + ", " + child.getName() + ")");
+		System.err.println("\t\tfa=(" + serialNumber + ", " + name + ")");
 		children.add(child);
 		return this;
 	}
