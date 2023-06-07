@@ -45,8 +45,6 @@ public class Xzqh {
 	}
 
 	public Xzqh addChild(Xzqh child) {
-		System.err.print("adding child. ch=(" + child.getSerialNumber() + ", " + child.getName() + ")");
-		System.err.println("\t\tfa=(" + serialNumber + ", " + name + ")");
 		children.add(child);
 		return this;
 	}

@@ -23,31 +23,22 @@ public class XzqhUtil {
 	}
 
 	public static Xzqh findXzqhFromSerial(int ser) {
-		System.err.println("Finding xzqh from ser=" + ser);
 		Queue<Xzqh> q = new LinkedList<Xzqh>();
 		Xzqh g = XzqhUtil.MASTER;
-//		g.setSerialNumber(0);
-		System.err.println("g=(" + g.getSerialNumber() + ", " + g.getName() + ")");
 		q.offer(g);
 		Xzqh z;
 		int asjd = 0;
-		System.err.println("before loop g=(" + g.getSerialNumber() + ", " + g.getName() + ")");
 		while (!q.isEmpty()) {
-			System.err.println("in loop g=(" + g.getSerialNumber() + ", " + g.getName() + ")");
-			System.err.println("q.top()=(" + q.peek().getSerialNumber() + ", " + q.peek().getName() + ")");
 			asjd++;
 			if (asjd >= 30)
 				break;
 			z = q.remove();
-			System.err.println("searching z=(" + z.getSerialNumber() + ", " + z.getName() + ")");
 			if (z.getSerialNumber() == ser) {
-				System.err.println("Found: z=(" + ser + ", " + z.getName() + ")");
 				return z;
 			} else {
 				Consumer<Xzqh> putIntoQueue = new Consumer<Xzqh>() {
 					@Override
 					public void accept(Xzqh t) {
-						System.err.println("z has child: ch=(" + t.getSerialNumber() + ", " + t.getName() + ")");
 						q.offer(t);
 					}
 				};
@@ -72,7 +63,6 @@ public class XzqhUtil {
 			Consumer<Xzqh> putIntoStack = new Consumer<Xzqh>() {
 				@Override
 				public void accept(Xzqh t) {
-					System.err.println("pushing t=(" + t.getSerialNumber() + ", " + t.getName() + ") in stack");
 					s.push(t);
 				}
 			};
