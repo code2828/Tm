@@ -1,28 +1,38 @@
-package tm.thulium.util;
+package tm.thulium.xzqh;
 
 import java.util.Queue;
 import java.util.Stack;
 import java.util.function.Consumer;
 import java.util.LinkedList;
 
-import tm.thulium.Thulium;
-import tm.thulium.xzqh.Xzqh;
-
 public class XzqhUtil {
-	public static Integer maxSerial = 0;
-	public final Xzqh MASTER = new Xzqh("氢");
+	private static Integer maxSerial = 0;
+	public final static Xzqh MASTER = new Xzqh("氢");
 
 	public XzqhUtil() {
 		maxSerial = 1;
 		MASTER.setSerialNumber(0);
 	}
 
+	public static Integer getMaxSerial() {
+		return maxSerial;
+	}
+
+	public static Integer incMaxSerial() {
+		return ++maxSerial;
+	}
+
 	public static Xzqh findXzqhFromSerial(int ser) {
 		Queue<Xzqh> q = new LinkedList<Xzqh>();
-		q.offer(Thulium.xu.MASTER);
-		Xzqh z = new Xzqh();
+		Xzqh g = XzqhUtil.MASTER;
+		q.offer(g);
+		Xzqh z;
+		int asjd = 0;
 		while (!q.isEmpty()) {
-			z = q.poll();
+			asjd++;
+			if (asjd >= 30)
+				break;
+			z = q.remove();
 			if (z.getSerialNumber() == ser) {
 				return z;
 			} else {
@@ -35,14 +45,18 @@ public class XzqhUtil {
 				z.getChild().forEach(putIntoQueue);
 			}
 		}
-		return Thulium.xu.MASTER;
+		return XzqhUtil.MASTER;
 	}
 
 	public static void printInTree() {
 		Stack<Xzqh> s = new Stack<Xzqh>();
-		s.push(Thulium.xu.MASTER);
+		s.push(XzqhUtil.MASTER);
 		Xzqh y = new Xzqh();
+		int debu = 0;
 		while (!s.empty()) {
+			debu++;
+			if (debu >= 40)
+				break;
 			y = s.pop();
 			System.out.println(y.getName());
 			System.out.println(y.getSerialNumber());
@@ -54,6 +68,16 @@ public class XzqhUtil {
 			};
 			y.getChild().forEach(putIntoStack);
 		}
+	}
+
+	public static void debugPrintLinear() {
+		Consumer<Xzqh> print = new Consumer<Xzqh>() {
+			@Override
+			public void accept(Xzqh t) {
+				System.out.println(t.getName() + ' ' + t.getSerialNumber());
+			}
+		};
+		MASTER.getChild().forEach(print);
 	}
 
 }
