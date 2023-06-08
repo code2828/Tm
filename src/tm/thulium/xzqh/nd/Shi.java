@@ -5,7 +5,18 @@ import tm.thulium.xzqh.Xzqh;
 public class Shi extends Xzqh {
 
 	public Shi() {
-		// TODO Auto-generated constructor stub
+		super();
+		suffix = "市";
+	}
+
+	public Shi(String name) {
+		super(name);
+		suffix = "市";
+	}
+
+	public Shi(String name, Integer ser) {
+		super(name, ser);
+		suffix = "市";
 	}
 
 }

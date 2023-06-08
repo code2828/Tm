@@ -5,7 +5,13 @@ import tm.thulium.xzqh.Xzqh;
 public class Xian extends Xzqh {
 
 	public Xian() {
-		// TODO Auto-generated constructor stub
+		super();
+		suffix = "县";
+	}
+
+	public Xian(String name) {
+		super(name);
+		suffix = "县";
 	}
 
 }

@@ -6,11 +6,16 @@ public class Zhou extends Xzqh {
 
 	public Zhou() {
 		super();
-		suffix="州";
+		suffix = "州";
 	}
 
 	public Zhou(String name) {
 		super(name);
+		suffix = "州";
+	}
+	
+	public Zhou(String name, Integer ser) {
+		super(name,ser);
 		suffix="州";
 	}
 

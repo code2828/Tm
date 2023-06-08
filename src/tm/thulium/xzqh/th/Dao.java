@@ -5,7 +5,13 @@ import tm.thulium.xzqh.Xzqh;
 public class Dao extends Xzqh {
 
 	public Dao() {
-		// TODO Auto-generated constructor stub
+		super();
+		suffix = "道";
+	}
+
+	public Dao(String name) {
+		super(name);
+		suffix = "道";
 	}
 
 }

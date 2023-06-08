@@ -5,7 +5,18 @@ import tm.thulium.xzqh.Xzqh;
 public class Fu extends Xzqh {
 
 	public Fu() {
-		// TODO Auto-generated constructor stub
+		super();
+		suffix = "府";
+	}
+
+	public Fu(String name) {
+		super(name);
+		suffix = "府";
+	}
+
+	public Fu(String name, Integer ser) {
+		super(name, ser);
+		suffix = "府";
 	}
 
 }
