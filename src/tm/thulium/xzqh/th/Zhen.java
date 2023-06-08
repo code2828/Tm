@@ -14,4 +14,9 @@ public class Zhen extends Xzqh {
 		suffix = "镇";
 	}
 
+	public Zhen(String name, Integer ser) {
+		super(name, ser);
+		suffix = "镇";
+	}
+
 }

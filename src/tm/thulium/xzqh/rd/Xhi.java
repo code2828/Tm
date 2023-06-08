@@ -14,4 +14,9 @@ public class Xhi extends Xzqh {
 		suffix = "市";
 	}
 
+	public Xhi(String name, Integer ser) {
+		super(name, ser);
+		suffix = "市";
+	}
+
 }

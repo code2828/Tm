@@ -14,4 +14,9 @@ public class Dao extends Xzqh {
 		suffix = "道";
 	}
 
+	public Dao(String name, Integer ser) {
+		super(name, ser);
+		suffix = "道";
+	}
+
 }

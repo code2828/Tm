@@ -14,4 +14,9 @@ public class Xian extends Xzqh {
 		suffix = "县";
 	}
 
+	public Xian(String name, Integer ser) {
+		super(name, ser);
+		suffix = "县";
+	}
+
 }

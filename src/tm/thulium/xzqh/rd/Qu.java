@@ -14,4 +14,8 @@ public class Qu extends Xzqh {
 		suffix = "区";
 	}
 
+	public Qu(String name, Integer ser) {
+		super(name, ser);
+		suffix = "区";
+	}
 }

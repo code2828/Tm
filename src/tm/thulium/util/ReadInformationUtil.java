@@ -7,7 +7,13 @@ import tm.thulium.xzqh.XzqhUtil;
 import tm.thulium.xzqh.nd.Fu;
 import tm.thulium.xzqh.nd.Jun;
 import tm.thulium.xzqh.nd.Shi;
+import tm.thulium.xzqh.rd.Qu;
+import tm.thulium.xzqh.rd.Xhi;
+import tm.thulium.xzqh.rd.Xian;
 import tm.thulium.xzqh.st.Zhou;
+import tm.thulium.xzqh.th.Dao;
+import tm.thulium.xzqh.th.Xiang;
+import tm.thulium.xzqh.th.Zhen;
 
 public class ReadInformationUtil {
 
@@ -51,6 +57,24 @@ public class ReadInformationUtil {
 						break;
 					case 'd':
 						XzqhUtil.ofSerial(ser).addChild(new Jun(in2, XzqhUtil.incMaxSerial()));
+						break;
+					case 'e':
+						XzqhUtil.ofSerial(ser).addChild(new Xhi(in2, XzqhUtil.incMaxSerial()));
+						break;
+					case 'f':
+						XzqhUtil.ofSerial(ser).addChild(new Qu(in2, XzqhUtil.incMaxSerial()));
+						break;
+					case 'g':
+						XzqhUtil.ofSerial(ser).addChild(new Xian(in2, XzqhUtil.incMaxSerial()));
+						break;
+					case 'h':
+						XzqhUtil.ofSerial(ser).addChild(new Dao(in2, XzqhUtil.incMaxSerial()));
+						break;
+					case 'i':
+						XzqhUtil.ofSerial(ser).addChild(new Zhen(in2, XzqhUtil.incMaxSerial()));
+						break;
+					case 'j':
+						XzqhUtil.ofSerial(ser).addChild(new Xiang(in2, XzqhUtil.incMaxSerial()));
 						break;
 					default:
 						System.err.println("Unknown");

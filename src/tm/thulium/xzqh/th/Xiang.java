@@ -14,4 +14,9 @@ public class Xiang extends Xzqh {
 		suffix = "乡";
 	}
 
+	public Xiang(String name, Integer ser) {
+		super(name, ser);
+		suffix = "乡";
+	}
+
 }
